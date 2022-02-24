@@ -1,0 +1,7 @@
+targetName = args[0]
+threads = args[1]
+
+sleep(200)
+while (true) {
+	hack(targetName, {threads: threads})
+}

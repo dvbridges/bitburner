@@ -1,0 +1,12 @@
+targetName = args[0]
+threads = args[1]
+
+minSecurity = getServerMinSecurityLevel(targetName) 
+securityThreshold = minSecurity + (minSecurity * .1)
+while (true) {
+	if (getServerSecurityLevel(targetName) > securityThreshold) {
+		weaken(targetName, {threads: threads})
+	} else {
+		sleep(1000)
+	}
+}

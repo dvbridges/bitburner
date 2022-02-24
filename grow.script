@@ -1,0 +1,12 @@
+targetName = args[0]
+threads = args[1]
+moneyThreshold = getServerMaxMoney(targetName) * .8
+
+sleep(100)
+while (true) {
+	if (getServerMoneyAvailable(targetName) < moneyThreshold ) {
+		grow(targetName, {threads: threads})
+	} else {
+		sleep(1000)
+	}
+}

@@ -6,7 +6,6 @@ export async function main(ns) {
     ownedServers.push("darkweb") // dont hack darkweb
     var currentServer
     stack.push(ns.getHostname())
-    var portHackers = ['BruteSSH.exe', 'FTPCrack.exe', 'relaySMTP.exe', 'HTTPWorm.exe']
 
     // Walk and get all nodes on network
     while (stack.length > 0) {

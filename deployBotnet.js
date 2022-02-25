@@ -29,14 +29,34 @@ export async function main(ns) {
                 ns.print("deploying botnet: ", currentServer)
                     // await ns.exec("deployHack.script", "home", 6, currentServer, currentTarget, 3, 12, 4)
 
-                let weaken = 14
-                let grow = 47
-                let hack = 16
+                let weaken = 6
+                let weakenAgain = 7
+                let grow = 50
+                let hack = 14
+
+                if (currentServer == "home") {
+                    weaken *= 3
+                    weakenAgain *= 3
+                    grow *= 6
+                    hack *= 6
+                }
+                // let hackLvl = ns.getHackingLevel()
+                // let weakenTime = ns.getWeakenTime(currentServer, {hackLvl: hackLvl})
+                // let growTime = ns.getGrowTime(currentServer, {hackLvl: hackLvl})
+                // let hackTime = ns.getHackTime(currentServer, {hackLvl: hackLvl})
+
+                // ns.tprint(weakenTime)
+                // ns.tprint(growTime)
+                // ns.tprint(hackTime)
 
                 await ns.exec("weaken.script", currentServer, weaken, currentTarget)
+                await ns.sleep(4000)
+                await ns.exec("weaken2.script", currentServer, weakenAgain, currentTarget)
+                await ns.sleep(2000)
                 await ns.exec("grow.script", currentServer, grow, currentTarget)
+                await ns.sleep(10000)
                 await ns.exec("hacker.script", currentServer, hack, currentTarget)
-                await ns.sleep(5)
+                await ns.sleep(6000)
             }
         }
     }

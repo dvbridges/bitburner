@@ -1,0 +1,15 @@
+currentServer = args[0]
+currentTarget = args[1]
+
+weaken = args[2]
+grow = args[3]
+hack = args[4]
+
+exec("weaken.script", currentServer, weaken, currentTarget)
+sleep(4000)
+exec("weaken2.script", currentServer, weaken, currentTarget)
+sleep(2000)
+exec("grow.script", currentServer, grow, currentTarget)
+sleep(10000)
+exec("hacker.script", currentServer, hack, currentTarget)
+sleep(6000)

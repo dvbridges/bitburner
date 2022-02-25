@@ -4,7 +4,8 @@ export async function main(ns) {
     let all = ns.stock.getSymbols()
     let stocks = []
 
-    var maxStocks = 100000
+    // var maxStocks = 100000
+    var maxStocks = 10000
 
     for (let i = 0; i < 10000000; i++) {
         for (let each in all) {

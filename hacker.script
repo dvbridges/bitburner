@@ -1,7 +1,10 @@
 targetName = args[0]
 threads = args[1]
 
-sleep(200)
+while(getServerMoneyAvailable(targetName) < (getServerMaxMoney(targetName) * .95)) {
+	sleep(2000)
+}
+
 while (true) {
 	hack(targetName, {threads: threads})
 }
